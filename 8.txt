@@ -1,0 +1,12 @@
+function expandedForm(num) {
+    let a = num.toString();
+    let res = [];
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] !== "0") {
+            let zeros = a.length - i - 1;
+            res.push(a[i] + "0".repeat(zeros));
+        }
+    }
+    return res.join(" + ");
+}
+console.log(expandedForm(12)); 
