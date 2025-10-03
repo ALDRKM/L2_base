@@ -1,0 +1,25 @@
+function howManyTimes(time1, time2) {
+  let t1 = new Date(time1);
+  let t2 = new Date(time2);
+  let count = 0;
+  while (t1 < t2) {
+    let h = t1.getHours() % 12;
+    if (h === 0) h = 12;
+
+    let m = t1.getMinutes();
+    let s = t1.getSeconds();
+    if (m === 0 && s < h) {
+      count++;
+    }
+    if (m === 30 && s === 0) {
+      count++;
+    }
+    t1.setSeconds(t1.getSeconds() + 1);
+  }
+
+  return count;
+}
+console.log(howManyTimes("2016-08-14 12:00:00","2016-08-14 12:00:01")); 
+console.log(howManyTimes("2016-08-14 12:00:00","2016-08-14 12:00:11")); 
+console.log(howManyTimes("2016-08-14 12:00:00","2016-08-14 12:01:00")); 
+console.log(howManyTimes("2016-08-14 12:00:00","2016-08-14 12:31:00"));
