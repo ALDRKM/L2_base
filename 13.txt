@@ -1,0 +1,14 @@
+function hexStringToRGB(hexString) {
+  if(hexString[0]==="#"){
+    hexString=hexString.slice(1);
+  }
+  let rh=hexString.slice(0,2);
+  let gh=hexString.slice(2,4);
+  let bh=hexString.slice(4,6);
+  let r=parseInt(rh, 16);
+  let g=parseInt(gh, 16);
+  let b=parseInt(bh, 16);
+  let result={ r: r, g: g, b: b };
+  return result;
+}
+console.log(hexStringToRGB("#FF9933"));
