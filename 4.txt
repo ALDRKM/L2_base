@@ -1,0 +1,14 @@
+function findMissing(list) {
+    let diffs = [];
+    for (let i = 1; i < list.length; i++) {
+        diffs.push(list[i] - list[i - 1]);
+    }
+    let d = Math.min(...diffs);
+    for (let i = 1; i < list.length; i++) {
+        if (list[i] - list[i - 1] !== d) {
+            return list[i - 1] + d;
+        }
+    }
+}
+
+console.log(findMissing([1, 3, 5, 9, 11]));
