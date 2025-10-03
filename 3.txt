@@ -1,0 +1,16 @@
+function whatCentury(year)
+{
+  let y=Number(year);
+  let x=Math.ceil(y/100);
+  let s="th"
+  if (x % 100 < 11 || x % 100 > 13) {
+        if (x % 10 === 1) s = "st";
+        else if (x % 10 === 2) s = "nd";
+        else if (x % 10 === 3) s = "rd";
+    }
+  return x+s;
+}
+console.log(whatCentury("1999"));
+console.log(whatCentury("2011"));
+console.log(whatCentury("2154"));
+console.log(whatCentury("2000"));
