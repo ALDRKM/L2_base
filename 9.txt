@@ -1,0 +1,17 @@
+function solution(str){
+  let sty=[];
+  for(let i=0;i<str.length;i++){
+  str=str.replace(" ","_");
+  }
+   if(str.length%2!=0){
+      str+="_";
+    }
+  for(let i=0;i<str.length;i+=2){
+    sty.push(str[i]+str[i+1]);
+  }
+  console.log(sty);
+  return sty;
+}
+let st="abcdef";
+let s="abcdefg";
+solution(st);
