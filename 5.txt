@@ -1,0 +1,22 @@
+function primeFactors(n) {
+    let res = "";
+    let d = 2;
+
+    while (n > 1) {
+        let count = 0;
+        while (n % d === 0) {
+            n = n / d;
+            count++;
+        }
+        if (count > 0) {
+            res += "(" + d;
+            if (count > 1) {
+                res += "**" + count;
+            }
+            res += ")";
+        }
+        d++;
+    }
+    return res;
+}
+console.log(primeFactors(86240));
