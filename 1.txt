@@ -1,0 +1,14 @@
+function expandedForm(num) {
+    let strNum = num.toString(); // превращаем число в строку
+    let result = [];
+    
+    for (let i = 0; i < strNum.length; i++) {
+        if (strNum[i] !== "0") { // пропускаем нули
+            let zeros = strNum.length - i - 1; // количество нулей после цифры
+            result.push(strNum[i] + "0".repeat(zeros));
+        }
+    }
+    
+    return result.join(" + ");
+}
+console.log(expandedForm(12)); 
