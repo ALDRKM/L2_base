@@ -1,0 +1,16 @@
+function toWeirdCase(string) {
+    let w = string.split(" ");
+    for (let i = 0; i < w.length; i++) {
+        let n = "";
+        for (let j = 0; j < w[i].length; j++) {
+            if (j % 2 === 0) {
+                n += w[i][j].toUpperCase();
+            } else {
+                n += w[i][j].toLowerCase();
+            }
+        }
+        w[i] = n;
+    }
+    return w.join(" ");
+}
+console.log(toWeirdCase("String"));
