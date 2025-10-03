@@ -1,0 +1,23 @@
+function domainName(url) {
+  let domen = "";
+  if (url.startsWith("http://")) {
+    url = url.slice(7);
+  } else if (url.startsWith("https://")) {
+    url = url.slice(8);
+  }
+
+  if (url.startsWith("www.")) {
+    url = url.slice(4);
+  }
+  for (let i = 0; i < url.length; i++) {
+    if (url[i] === ".") {
+      break;
+    }
+    domen += url[i];
+  }
+
+  return domen;
+}
+console.log(domainName("http://google.co.jp"));  
+console.log(domainName("https://youtube.com")); 
+console.log(domainName("http://www.zombie-bites.com"));
